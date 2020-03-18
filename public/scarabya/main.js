@@ -87,7 +87,7 @@ const initBoard = (boardWidth, boardHeight) => {
 
 const newGame = () => {
   socket.emit("new-game", null);
-}
+};
 
 const joinGame = () => {
   const gameId = document.getElementById("game-id").value;
@@ -96,4 +96,16 @@ const joinGame = () => {
     return;
   }
   socket.emit("join-game", gameId);
-}
+};
+
+const sendMessage = () => {
+  const message = document.getElementById("chat-input").value;
+  if (message === "") return;
+
+  const chatMessage = document.createElement("div");
+  chatMessage.classList.add("chat-message");
+  chatMessage.innerHTML = message;
+
+  const chat = document.querySelector(".chat-body");
+  chat.appendChild(chatMessage);
+};

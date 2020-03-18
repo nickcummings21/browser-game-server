@@ -29,18 +29,70 @@ body {
 }
 
 .game {
-  padding: 50px 100px;
+  /* padding: 50px 100px; */
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+}
+
+.chat {
+  /* background: gray; */
+  width: 300px;
+  height: 400px;
+  margin: 50px auto;
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: 30px 340px 30px;
+  /* overflow: hidden; */
+}
+
+.chat-header {
+  background-color: #555;
+  color: #eee;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+}
+
+.chat-body {
+  overflow: auto;
+}
+
+.chat-message {
+  text-align: left;
+  padding: 4px;
+  border: 1px solid #fff;
+}
+.chat-message:hover {
+  border: 1px solid #ccc;
+}
+
+.chat-input-area {
+  display: grid;
+  grid-template-columns: auto min-content;
+}
+
+.chat-input-area .btn {
+  border-radius: 0;
+  padding: 4px 8px;
+}
+
+.chat-input-area input {
+  font-size: 16px;
+  padding: 4px;
 }
 
 .board {
   margin: auto;
-  width: 800px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
   background: #555;
   display: grid;
-  grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.board-space {
-
+.next-piece {
+  background: gray;
+  min-width: 250px;
 }
