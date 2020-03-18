@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+  <!-- <script defer src="/socket.io/socket.io.js"></script> -->
+  
+  <link rel="stylesheet" href="main.css">
+  <script defer src="main.js"></script>
+
+  <title>Scarabya</title>
+</head>
+<body>
+
+  <h1 class="title">SCARABYA</h1>
+
+  <div class="start-game">
+    <div class="btn" onclick="newGame()">New Game</div>
+
+    <input type="text" id="game-id" placeholder="Game ID">
+    <div class="btn" onclick="joinGame()">Join Game</div>
+  </div>
+
+  <div class="game">
+    <div class="board"></div>
+  </div>
+  
+</body>
+</html>

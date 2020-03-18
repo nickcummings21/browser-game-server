@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+  text-align: center;
+}
+
+.start-game {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.start-game input {
+  width: 256px;
+  border: none;
+  outline: none;
+}
+
+.btn {
+  padding: 8px;
+  background-color: #555;
+  color: #eee;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.game {
+  padding: 50px 100px;
+}
+
+.board {
+  margin: auto;
+  width: 800px;
+  height: 700px;
+  background: #555;
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+}
+
+.board-space {
+
+}
