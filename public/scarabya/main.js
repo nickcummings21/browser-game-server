@@ -91,5 +91,9 @@ const newGame = () => {
 
 const joinGame = () => {
   const gameId = document.getElementById("game-id").value;
+  if (gameId === "") {
+    alert("Game ID invalid.");
+    return;
+  }
   socket.emit("join-game", gameId);
 }

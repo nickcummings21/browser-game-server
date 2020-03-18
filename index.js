@@ -41,7 +41,12 @@ io.on("connection", socket => {
   });
   socket.on("join-game", id => {
     game = scarabya.joinGame(socket.id, id);
-    socket.emit("start-game", game.getGameState());
+    if (game == null) {
+      socket.emit("message", "Invalid game ID.");
+    }
+    else {
+      socket.emit("start-game", game.getGameState());
+    }
   });
 
   socket.on("excavate", data => {

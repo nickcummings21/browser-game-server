@@ -12,6 +12,9 @@ const newGame = socketId => {
 };
 
 const joinGame = (socketId, gameId) => {
+  if (games[gameId] == undefined) {
+    return null;
+  }
   playersByGame[gameId].push(socketId);
   return games[gameId];
 }
