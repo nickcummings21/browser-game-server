@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const socket = require("socket.io");
 
-const scarabya = require("./scarabya/server/main");
+const scarabya = require("./scarabya/main");
 
 const app = express();
 

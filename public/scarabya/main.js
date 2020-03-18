@@ -1,4 +1,5 @@
-const SERVER_URL = "http://localhost:5000";
+// const SERVER_URL = "http://localhost:5000";
+const SERVER_URL = "https://browser-game-server.herokuapp.com";
 
 const socket = io(SERVER_URL);
 
