@@ -11,6 +11,7 @@ const EXCAVATED = 3;
 class Board {
   constructor() {
     this.board = [];
+    this.blankBoard = [];
     this.width = BOARD_WIDTH;
     this.height = BOARD_HEIGHT;
     this.generateBoard();
@@ -22,22 +23,23 @@ class Board {
       for (let j = 0; j < BOARD_WIDTH; j++) {
         const temp = rand(100);
         if (temp < 8) {
-          this.board[i].push(ROCK); 
-        }
-        else if (temp < 40) {
-          this.board[i].push(SCARAB); 
-        }
-        else {
-          this.board[i].push(BLANK); 
+          this.board[i].push(ROCK);
+        } else if (temp < 40) {
+          this.board[i].push(SCARAB);
+        } else {
+          this.board[i].push(BLANK);
         }
       }
     }
+    this.blankBoard = JSON.parse(JSON.stringify(this.board));
   }
 
   excavate(coords) {
     for (let i = 0; i < coords.length; i++) {
       const currValue = this.board[coords[i].y][coords[i].x];
-      this.board[coords[i].y][coords[i].x] = currValue == BLANK ? EXCAVATED : BLANK;
+      const origValue = this.board[coords[i].y][coords[i].x];
+      this.board[coords[i].y][coords[i].x] =
+        currValue == origValue && origValue != ROCK ? EXCAVATED : origValue;
     }
   }
 }
