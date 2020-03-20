@@ -37,7 +37,7 @@ class Board {
   excavate(coords) {
     for (let i = 0; i < coords.length; i++) {
       const currValue = this.board[coords[i].y][coords[i].x];
-      const origValue = this.board[coords[i].y][coords[i].x];
+      const origValue = this.blankBoard[coords[i].y][coords[i].x];
       this.board[coords[i].y][coords[i].x] =
         currValue == origValue && origValue != ROCK ? EXCAVATED : origValue;
     }
