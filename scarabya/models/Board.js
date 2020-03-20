@@ -21,8 +21,11 @@ class Board {
     for (let i = 0; i < BOARD_HEIGHT; i++) {
       this.board.push([]);
       for (let j = 0; j < BOARD_WIDTH; j++) {
+        const isQuadCenter =
+          (i == 2 && (j == 2 || j == 7)) || (i == 7 && (j == 2 || j == 7));
+
         const temp = rand(100);
-        if (temp < 8) {
+        if (temp < 8 && !isQuadCenter) {
           this.board[i].push(ROCK);
         } else if (temp < 40) {
           this.board[i].push(SCARAB);
