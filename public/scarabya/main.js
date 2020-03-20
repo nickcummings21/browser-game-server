@@ -85,6 +85,41 @@ const initBoard = (boardWidth, boardHeight) => {
   }
 };
 
+const initNextPieceDisplay = () => {
+  const nextPieceDisplay = document.querySelector(".next-piece-display");
+  nextPieceDisplay.innerHTML = "";
+  let i = 0;
+  while (i < 25) {
+    const space = document.createElement("div");
+    space.id = "display-space" + Math.floor(i / 5) + (i % 5);
+    nextPieceDisplay.appendChild(space);
+    i++;
+  }
+};
+initNextPieceDisplay();
+
+let activePiece = -1;
+const displayNextPiece = temp => {
+  activePiece = (activePiece < 11) ? activePiece + 1 : 0;
+  updatePieceDisplay();
+}
+
+const updatePieceDisplay = () => {
+  const nextPiece = pieces[activePiece];
+  for (let i = 0; i < nextPiece.length; i++) {
+    for (let j = 0; j < nextPiece[i].length; j++) {
+      const currSpace = document.querySelector("#display-space" + i + j);
+      if (nextPiece[i][j] == 3) {
+        currSpace.style.backgroundColor = "gray";
+      }
+      else {
+        currSpace.style.backgroundColor = "white";
+      }
+    } 
+  }
+}
+displayNextPiece(pieces[0]);
+
 const newGame = () => {
   socket.emit("new-game", null);
 };
@@ -109,3 +144,6 @@ const sendMessage = () => {
   const chat = document.querySelector(".chat-body");
   chat.appendChild(chatMessage);
 };
+
+
+
