@@ -36,7 +36,8 @@ class Board {
 
   excavate(coords) {
     for (let i = 0; i < coords.length; i++) {
-      this.board[coords[i].y][coords[i].x] = EXCAVATED;
+      const currValue = this.board[coords[i].y][coords[i].x];
+      this.board[coords[i].y][coords[i].x] = currValue == BLANK ? EXCAVATED : BLANK;
     }
   }
 }

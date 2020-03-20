@@ -97,7 +97,6 @@ body {
 }
 
 .next-piece {
-  /* background: gray; */
   min-width: 250px;
   display: flex;
   flex-direction: column;
